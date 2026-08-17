@@ -1,1 +1,17 @@
-<?xml version="1.0"?><rss><channel><title>Test</title></channel></rss>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcasts-1.0.dtd">
+<channel>
+<title>CANDANMUSIC - Gunluk Muzik Raporu</title>
+<link>https://candanmusic.github.io/musichub-tr/</link>
+<description>Gunluk 5-10 dk</description>
+<language>tr-tr</language>
+<itunes:author>CANDANMUSIC</itunes:author>
+<itunes:image href="https://candanmusic.github.io/musichub-tr/assets/candan_radyosu_gold.png"/>
+<item>
+<title>2026-08-17 - Gunluk Muzik Raporu</title>
+<description>Bugun Spotify Loud&Clear, YouTube Charts, TikTok Newsroom ve Suno blog verileri analiz edildi. Detaylar podcastte.</description>
+<pubDate>2026-08-17 19:03:10.261386</pubDate>
+<enclosure url="https://candanmusic.github.io/musichub-tr/podcast/episodes/test.mp3" type="audio/mpeg"/>
+</item>
+</channel>
+</rss>
