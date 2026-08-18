@@ -1,11 +1,11 @@
-name: MusicHubTR Otomatik Yayin
+name: MusicHubTR
 on: [workflow_dispatch]
 permissions: {contents: write}
 jobs:
   topla:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: actions/setup-python@v5
-        with: {python-version: '3.11'}
+        with: {python-version: '3.12'}
       - run: python agents/resmi_agent.py && cat data/ham_haberler.json
