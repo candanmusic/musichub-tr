@@ -5,13 +5,25 @@ on:
     - cron: '0 7 * * *'
   workflow_dispatch:
 jobs:
-  topla:
+  topla-yayinla:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: echo topla
-  yayinla:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: echo 10:00 yayinla
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: 09:00 Topla - 53 kaynak
+        run: python agents/resmi_agent.py
+      - name: Taslak olustur
+        run: |
+          mkdir -p taslaklar/$(date +%Y-%m-%d)
+          echo "hukuk raporu" > taslaklar/$(date +%Y-%m-%d)/hukuk_raporu.json
+          echo "INSTAGRAM REELS CAPTION - Spotify ofis aciyor" > taslaklar/$(date +%Y-%m-%d)/instagram_reels_caption.txt
+          echo "YOUTUBE SHORTS SCRIPT" > taslaklar/$(date +%Y-%m-%d)/youtube_shorts_script.txt
+      - name: Push
+        run: |
+          git config user.email "bot@musichub.tr"
+          git config user.name "MusicHubTR Bot"
+          git add data/ taslaklar/
+          git commit -m "auto: $(date +%Y-%m-%d) topla+yayinla" || echo "no changes"
+          git push
